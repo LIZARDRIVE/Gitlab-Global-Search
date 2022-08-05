@@ -1,6 +1,6 @@
 # Gitlab-Global-Search
-Gitlab Global Search is a tool allowing to browse all projects you have access to in order to find specific strings
+Gitlab Global Search is a simple script allowing to browse all Gitlab projects you have access to in order to find specific strings in it.
 
-I used it in order to find COBOL programs which are being called in real time by java applications (hence the filter on file type).
+I wrote it in order to find COBOL specific programs which are being called in real time by Java applications.
 
 Just adapt it to fit your needs!
