@@ -17,12 +17,12 @@ projects = gl.projects.list(all=True)
 
 for project in projects:
     print(project.name)
-    if(project.empty_repo == False): # no need to check an empty project
-        files = project.repository_tree(recursive=True, all=True)
+    if(project.empty_repo == False): # no need to check an empty / an archived project
+        files = project.repository_tree(recursive=True, archived=False)
         for file in files:
             if(file["type"] == 'blob' and ('.java' in file["name"])) :
                 print("  - " + file["name"])
-                f = project.files.get(file_path=file['path'], ref='main')
+                f = project.files.get(file_path=file['path'], ref=project.default_branch) # if ref=Main, we may encounter 404 error
                 file_content = f.decode()
                
                 for pgm in pgmlist:
